@@ -1,0 +1,98 @@
+{% extends 'lab/navbar.html' %}
+{% load static %}
+
+{% block content%}
+    <style>
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #000000;
+            color: white;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        }
+    </style>
+
+
+    <body>
+
+        <img src="{% static 'lab\images\team\grp (1).jpeg' %}" alt="Group Photo" width="110%">
+        <section>
+            <section class="team-page-section">
+                <center>
+                    <h1><b>PRINCIPAL INVESTIGATORS</b></h1>
+                </center>
+                <hr style="margin-left: 100px; margin-right: 110px;">
+                <br>
+
+                <div class="container">
+                    <div class="row clearfix">
+
+                        <div class="team-block col-lg-4 col-md-6 col-sm-12">
+                            <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <ul class="social-icons">
+                                    <li><a href="https://www.linkedin.com/in/shiladitya-sengupta-8441bb1/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Sengupta+S" target="_blank"><i class="ai ai-pubmed ai-1x"></i></a></li>
+
+                                </ul>
+                                <div class="image">
+                                    <a href="/shiladit"><img src="{% static 'lab/images/team/PI/devapriya.jpeg' %}" alt="" /></a>
+                                </div>
+                                <div class="lower-content">
+                                    <h3><a href="/shiladit">U. Deva Priyakumar</a>, PhD</h3>
+                                    <div class="designation">Professor, CCNSB, IIIT-Hyderabad</div>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+                    </div>
+                    <div class="row clearfix">
+                    </div>
+                    <!--
+				<div class="sec-title centered">
+					<br>
+					<h3><b><u>STUDENT RESEARCHERS</u></b></h3>
+				</div>
+				-->
+
+
+                    <div class="row clearfix">
+
+
+
+
+                    </div>
+                    <br>
+                </div>
+                </div>
+                </div>
+            </section>
+        </section>
+    </body>
+    {% endblock %}

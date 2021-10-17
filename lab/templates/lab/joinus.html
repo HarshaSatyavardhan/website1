@@ -1,0 +1,14 @@
+{% extends 'lab/navbar.html' %}
+{% load static %}
+
+
+{% block content%}
+<body>
+
+    <h1>
+        {% for public in positiondatas %}
+        <center> POSITIONS OPEN </center>
+        <p class="p_about">{{public.data}}</p>
+        {% endfor %}
+</body>
+{% endblock %}

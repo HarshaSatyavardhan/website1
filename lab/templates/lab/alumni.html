@@ -1,0 +1,83 @@
+{% extends 'lab/navbar.html' %}
+{% load static %}
+
+
+{% block content%}
+    <style>
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #000000;
+            color: white;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        }
+    </style>
+
+
+    <body>
+
+        <img src="{% static 'lab\images\team\grp (1).jpeg' %}" alt="Group Photo" width="110%">
+        <section>
+            <section class="team-page-section">
+                <div class="container">
+                    <div class="row clearfix">
+                    </div>
+                    <div class="row clearfix">
+                    </div>
+                    <div class="row clearfix">
+                    </div>
+                    <center>
+                        <h1><b>ALUMNI</b></h1>
+                    </center>
+                    <hr style="margin-left: 100px; margin-right: 110px;">
+                    <br>
+                    <table id="customers">
+                        <tr>
+                            <th>Lab Alumni</th>
+                            <th>Currently</th>
+                        </tr>
+                        {% for public in aluminidata %}
+                        <tr>
+                            <td>{{public.labalumini}}</td>
+                            <td>{{public.currently}}</td>
+                        </tr>
+                       {% endfor %}
+
+
+                    </table>
+                    <br><br>
+
+                </div>
+                </div>
+                </div>
+            </section>
+        </section>
+    </body>
+
+    {% endblock %}

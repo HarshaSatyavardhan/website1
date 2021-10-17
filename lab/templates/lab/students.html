@@ -1,0 +1,202 @@
+{% extends 'lab/navbar.html' %}
+{% load static %}
+
+{% block content%}
+
+
+	<style>
+		#customers {
+			font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		#customers td,
+		#customers th {
+			border: 1px solid #ddd;
+			padding: 8px;
+		}
+
+		#customers tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+
+		#customers tr:hover {
+			background-color: #ddd;
+		}
+
+		#customers th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #000000;
+			color: white;
+		}
+
+		hr {
+			border: 0;
+			height: 1px;
+			background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+		}
+	</style>
+
+
+	<body>
+
+		<img src="{% static 'lab\images\team\grp (1).jpeg' %}" alt="Group Photo" width="110%">
+		<section>
+			<section class="team-page-section">
+				<div class="container">
+					<div class="row clearfix">
+					</div>
+					<div class="row clearfix">
+					</div>
+					<center>
+						<h1><b>RESEARCH TRAINEES</b></h1>
+					</center>
+					<hr style="margin-left: 20px; margin-right: 20px;">
+					<br>
+
+					<div class="row clearfix">
+
+
+
+
+						<div class="team-block col-lg-4 col-md-6 col-sm-12">
+							<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+								<ul class="social-icons">
+									<li><a href="https://www.linkedin.com/in/anupam-tiwari/"
+											target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+
+								</ul>
+								<div class="image">
+									<img src="images/team/Students/bhuvanesh.jpg" alt="" />
+								</div>
+								<div class="lower-content">
+									<h3>Bhuvanesh<br>Sridharan</h3>
+									<div class="designation"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="team-block col-lg-4 col-md-6 col-sm-12">
+							<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+								<ul class="social-icons">
+									<li><a href="https://www.linkedin.com/in/vaishnaviumalkar28/"
+											target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+
+								</ul>
+								<div class="image">
+									<img src="images/team/Students/akshit.jpg" alt="" />
+								</div>
+								<div class="lower-content">
+									<h3>Akshit<br>Garg</h3>
+									<div class="designation"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="team-block col-lg-4 col-md-6 col-sm-12">
+							<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+								<ul class="social-icons">
+									<li><a href="https://www.linkedin.com/in/divyaansh-singh/"
+											target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+
+								</ul>
+								<div class="image">
+									<img src="images/team/Students/ganesh.jpg" alt="" />
+								</div>
+								<div class="lower-content">
+									<h3>Kanakala<br>Ganesh</h3>
+									<div class="designation"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="team-block col-lg-4 col-md-6 col-sm-12">
+							<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+								<ul class="social-icons">
+									<li><a href=""
+											target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+
+								</ul>
+								<div class="image">
+									<img src="{% static 'lab/images/team/Students/vijay.png' %}" alt="" />
+								</div>
+								<div class="lower-content">
+									<h3>Vijay<br>Vignesh</h3>
+									<div class="designation"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="team-block col-lg-4 col-md-6 col-sm-12">
+							<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+								<ul class="social-icons">
+									<li><a href="https://www.linkedin.com/in/devanshi-jain-00747815b/"
+											target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+
+								</ul>
+								<div class="image">
+									<img src="{% static 'lab/images/team/Students/karthik.jpeg' %}" alt="" />
+								</div>
+								<div class="lower-content">
+									<h3>Karthik<br>Vishwanathan</h3>
+									<div class="designation"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="team-block col-lg-4 col-md-6 col-sm-12">
+							<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+								<ul class="social-icons">
+									<li><a href="https://www.linkedin.com/in/premsanthosh"
+											target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+
+								</ul>
+								<div class="image">
+									<img src="{% static 'lab/images/team/Students/arihanth.jpeg' %}" alt="" />
+								</div>
+								<div class="lower-content">
+									<h3>Arihanth<br>Tadanki</h3>
+									<div class="designation"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="team-block col-lg-4 col-md-6 col-sm-12">
+							<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+								<ul class="social-icons">
+									<li><a href=""
+											target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+
+								</ul>
+								<div class="image">
+									<img src="{% static 'lab/images/team/Students/sriram.jpeg' %}" alt="" />
+								</div>
+								<div class="lower-content">
+									<h3>Sriram<br>Devata</h3>
+									<div class="designation"></div>
+								</div>
+							</div>
+						</div>
+
+						
+
+
+
+					</div>
+					<br>
+
+					<br><br>
+
+				</div>
+				</div>
+				</div>
+			</section>
+		</section>
+
+
+
+	</body>
+	{% endblock %}

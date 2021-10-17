@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<cen /center>
+
+    <head>
+        <title>BIIT</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{% static 'lab/css/team.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+        <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="{% static 'lab/css/open-iconic-bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'lab/css/animate.css' %}">
+
+        <link rel="stylesheet" href="{% static 'lab/css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'lab/css/owl.theme.default.min.css' %}">
+        <link rel="stylesheet" href="{% static 'lab/css/magnific-popup.css' %}">
+
+        <link rel="stylesheet" href="{% static 'lab/css/aos.css' %}">
+
+        <link rel="stylesheet" href="{% static 'lab/css/ionicons.min.css' %}">
+
+        <link rel="stylesheet" href="{% static 'lab/css/bootstrap-datepicker.css' %}">
+        <link rel="stylesheet" href="{% static 'lab/css/jquery.timepicker.css' %}">
+
+        <link rel="stylesheet" href="{% static 'lab/css/table.css' %}">
+        <link rel="stylesheet" href="{% static 'lab/fonts/academicons-1.8.6/css/academicons.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'lab/css/flaticon.css' %}">
+        <link rel="stylesheet" href="{% static 'lab/css/icomoon.css' %}">
+        <link rel="stylesheet" href="{% static 'lab/css/style.css' %}">
+        <link rel="shortcut icon" href="{% static 'lab/images/hmslogo.ico' %}" type="image/png" />
+    </head>
+
+
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+            <div class="container">
+                <a class="navbar-brand" href="/index"><img src="{% static 'lab/images/logos/newlogo.png' %}" /></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                    aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="oi oi-menu"></span> Menu
+                </button>
+
+                <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a href="/index" class="nav-link"
+                                onMouseOver="this.style.color='#A41034'" onmouseout="this.style.color='black'"
+                                style="text-transform: capitalize;">Home</a></li>
+                        <li class="nav-item active"><a href="/research" class="nav-link"
+                                onMouseOver="this.style.color='#A41034'" onmouseout="this.style.color='black'"
+                                style="text-transform: capitalize;">Research</a></li>
+                        <li class="nav-item active"><a href="/publications" class="nav-link"
+                                onMouseOver="this.style.color='#A41034'" onmouseout="this.style.color='black'"
+                                style="text-transform: capitalize;">Publications</a></li>
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link dropdown-toggle" href="/team" id="navbarDropdown" role="button"
+                                onMouseOver="this.style.color='#A41034'" onmouseout="this.style.color='black'"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                style="text-transform: capitalize;">
+                                People
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/pi" onMouseOver="this.style.color='#A41034'"
+                                    onmouseout="this.style.color='black'">Principal Investigators</a>
+                                <a class="dropdown-item" href="/researchers"
+                                    onMouseOver="this.style.color='#A41034'"
+                                    onmouseout="this.style.color='black'">Senior Scientists</a>
+                                <a class="dropdown-item" href="/phd_students"
+                                    onMouseOver="this.style.color='#A41034'" onmouseout="this.style.color='black'">PhD/Masters
+                                    Students</a>
+                                <a class="dropdown-item" href="/students" onMouseOver="this.style.color='#A41034'"
+                                    onmouseout="this.style.color='black'">Research Trainees</a>
+                                <a class="dropdown-item" href="/alumni" onMouseOver="this.style.color='#A41034'"
+                                    onmouseout="this.style.color='black'">Alumni</a>
+                            </div>
+                        </li>
+                        <li class="nav-item active"><a href="/contact" class="nav-link"
+                                onMouseOver="this.style.color='#A41034'" onmouseout="this.style.color='black'"
+                                style="text-transform: capitalize;">Projects</a></li>
+                        <li class="nav-item active"><a href="/joinus" class="nav-link"
+                                onMouseOver="this.style.color='#A41034'" onmouseout="this.style.color='black'"
+                                style="text-transform: capitalize;">Join
+                                Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br><br><br><br>
+
+        {% block content %}
+        {% endblock %}
+        
+
+
+        <footer class="ftco-footer ftco-bg-dark ftco-section img" style="">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-md">
+                        <div class="ftco-footer-widget mb-4 bg-primary p-4">
+                            <h2 class="ftco-heading-2">Center for Computational Natural Sciences <br> and Bioinformatics Engineered Therapeutics</h2>
+                            <p></p>
+                            <ul class="ftco-footer-social list-unstyled mb-0">>
+                                <li class="ftco-animate"><a href="https://twitter.com/iiit_hyderabad"><span
+                                            class="icon-twitter"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md">
+                        <div class="ftco-footer-widget mb-4">
+                            <h2 class="ftco-heading-2">Quick Links</h2>
+                            <ul class="list-unstyled">
+                                <li><a href="/index" class="py-2 d-block">Home</a></li>
+                                <li><a href="/research" class="py-2 d-block">Research</a></li>
+                                <li><a href="/publications" class="py-2 d-block">Publications</a></li>
+                                <li><a href="/pi" class="py-2 d-block">People</a></li>
+                                <li><a href="/contact" class="py-2 d-block">Projects</a></li>
+                                <li><a href="/joinus" class="py-2 d-block">Join Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="ftco-footer-widget mb-4">
+                            <h2 class="ftco-heading-2">Office</h2>
+                            <div class="block-23 mb-3">
+                                <ul>
+                                    <li><span class="icon icon-map-marker"></span><span class="text"><a
+                                        href="https://www.google.com/maps/place/Gayam+Motor+Works+(GMW)/@17.445296,78.349932,16z/data=!4m5!3m4!1s0x0:0xaf84b89b331c332a!8m2!3d17.4458249!4d78.3489187?hl=en">
+                                        A3-308 CCNSB,
+                                        <br>IIIT Campus, 
+                                        <br>Gachibowli
+                                        <br>Hyderabad 500 032, 
+                                        <br>India 
+                                        </a>
+                                        </span> </li>
+                                        <li><a href="mailto:deva@iiit.ac.in"><span class="icon icon-envelope"></span><span
+											class="text">deva[at]iiit[dot]ac[dot]in</span></a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>Copyright © 2021 CCNSB | All rights reserved</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <script src="{% static 'lab/js/jquery.min.js' %}"></script>
+        <script src="{% static 'lab/js/jquery-migrate-3.0.1.min.js' %}"></script>
+        <script src="{% static 'lab/js/popper.min.js' %}"></script>
+        <script src="{% static 'lab/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'lab/js/jquery.easing.1.3.js' %}"></script>
+        <script src="{% static 'lab/js/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'lab/js/jquery.stellar.min.js' %}"></script>
+        <script src="{% static 'lab/js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'lab/js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'lab/js/aos.js' %}"></script>
+        <script src="{% static 'lab/js/jquery.animateNumber.min.js' %}"></script>
+        <script src="{% static 'lab/js/bootstrap-datepicker.js' %}"></script>
+        <script src="{% static 'lab/js/jquery.timepicker.min.js' %}"></script>
+        <script src="{% static 'lab/js/scrollax.min.js' %}"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+        <script src="{% static 'lab/js/google-map.js' %}"></script>
+        <script src="{% static 'lab/js/main.js' %}"></script>
+    </body>

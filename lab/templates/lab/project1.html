@@ -1,0 +1,206 @@
+{% extends 'lab/navbar.html' %}
+{% load static %}
+
+{% block content%}
+    <head>
+
+        <script type="text/javascript" language="javascript" src="{% static 'lab/jsme/jsme.nocache.js' %}"></script>
+        <style>
+            em {
+                background-color: rgb(102, 255, 255);
+            }
+        </style>
+    
+        <script>
+            //this function will be called after the JavaScriptApplet code has been loaded.
+            function jsmeOnLoad() {
+    
+                jsmeApplet = new JSApplet.JSME("jsme_container", "380px", "340px", {
+                    "options": "oldlook,marker,markAtomOnly,nocanonize"
+                });
+    
+                jsmeApplet.setCallBack("AfterStructureModified", show_smiles);
+                //jsmeApplet.setNotifyStructuralChangeJSfunction("show_smiles");
+            }
+    
+            var patt = /\[([A-Za-z][a-z]?)H?\d*:\d+\]/g; //regexp pattern for numbered atom
+            function show_smiles(event) {
+                smiles = event.src.smiles(); //atom that are colored are numbered
+                new_smiles = smiles.replace(patt, '<em>$1</em>');
+                document.getElementById("smiles_container").innerHTML = new_smiles
+            }
+    
+    
+        </script>
+    </head>
+
+    <style>
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #000000;
+            color: white;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        }
+    </style>
+
+
+    <body>
+
+
+        <div>
+            <div>
+                <table class="table-responsive">
+        
+        
+        
+                    <tr>
+                        <td>
+                            
+                            <p><h5><b>Abstract</b></h5>
+                               Solubility of drug molecules is related to pharmacokinetic properties such as absorption and distribution,
+                               which affects the amount of drug that is available in the body for its action. Computational or experimental
+                               evaluation of solvation free energies of drug-like molecules/solute that quantify solubilities is an
+                               arduous task and hence development of reliable computationally tractable models is sought after in drug
+                               discovery tasks in pharmaceutical industry. Here, we report a novel method based on graph neural network
+                               to predict solvation free energies. Previous studies considered only the solute for solvation free energy
+                               prediction and ignored the nature of the solvent, limiting their practical applicability. The proposed model
+                               is an end-to-end framework comprising three phases namely, message passing, interaction and prediction phases.
+                               In the first phase, message passing neural network was used to compute inter-atomic interaction within both
+                               solute and solvent molecules represented as molecular graphs. In the interaction phase, features from the
+                               preceding step is used to calculate a solute-solvent interaction map, since the solvation free energy depends
+                               on how (un)favorable the solute and solvent molecules interact with each other. The calculated interaction map
+                               that captures the solute-solvent interactions along with the features from the message passing phase is used to
+                               predict the solvation free energies in the final phase. The model predicts solvation free energies involving a
+                               large number of solvents with high accuracy. We also show that the interaction map captures the electronic and
+                               steric factors that govern the solubility of drug-like molecules and hence is chemically interpretable.</p>
+                            
+                            <p><h5><b>Methodology</b></h5>
+                                <b>Architecture of CIGIN Model : Two examples one each for solvent (NCCO) and solute (OCC) are used as a test case.</b>
+                                In this work, we encode molecules as graphs, where atoms constitute the nodes and bonds the edges. The nodes and
+                                the edges are characterized by a set of features. The model proposed in this work named as the CIGIN model,
+                                which stands for Chemically Interpretable Graph Interaction Network, can be broken down into three phases - message
+                                passing phase, interaction phase and prediction phase.
+                            </p>
+
+                            <img class="mx-auto d-block" src="{% static 'lab\projects\01.jpg' %}">
+
+                            <p><h5><b>Results</b></h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p>Plot of predicted (averaged over the five independent 10-fold cross validation runs)
+                                           versus experimental solvation free energies. Predictions with error less than
+                                           1 kcal/mol lied between the two red lines.</p>
+                                           <img class="mx-auto d-block" src="{% static 'lab\projects\02.jpg' %}">
+                                        <p>Interaction between the oxygen of water (solvent) and atoms of primary (ethylamine),
+                                             secondary (diethylamine) and tertiary amines (triethylamine). The fractional 
+                                             interaction of each atom were obtained and were normalized (min-max) across the three solutes.
+                                             The predicted hydration free energy values are also given.</p>
+                                            <img class="mx-auto d-block" src="{% static 'lab\projects\04.jpg' %}">
+                                        <p>Predicted values of the solvation free energies of methanol in four different
+                                            solvents with varying polarities (). The contribution of the interaction of C 
+                                            and O atoms of methanol with the each of these solvents were calculated and the
+                                            min-max normalized values of the fractional interactions are given.</p>
+                                            <img class="mx-auto d-block" src="{% static 'lab\projects\06.jpg' %}">
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                    <p>Plot of predicted (averaged over the five independent 10-fold cross validation runs)
+                                    versus experimental solvation free energies. Predictions with error less than 1 kcal/mol
+                                    lied between the two red lines.</p>
+                                    <img class="mx-auto d-block" src="{% static 'lab\projects\03.jpg' %}">
+
+                                    <p>
+                                    The structures of ortho- and para-nitrophenols showing the possibility of intramolecular
+                                     hydrogen bond only in the ortho isomer along with the predicted hydration free energies.
+                                    </p>
+                                    <img class="mx-auto d-block" src="{% static 'lab\projects\05.jpg' %}">
+                                    </div>
+                                </div>
+                            
+                                <p><h5><b>Discussion</b></h5>
+                                Solvation free energy as a property has widespread applications in diverse fields of science
+                                and technology. The current manuscript reports a novel method based on graph interaction
+                                network for predicting solvation free energies involving drug-like/small organic molecules
+                                and generic organic solvents. We have demonstrated the robustness of this method by validating
+                                it by using different datasets and solvent holdout tests. Interaction maps calculated for each
+                                solvent-solute pair is demonstrated to reveal essential molecular/atomic level details of the
+                                inter/intramolecular interactions making the model chemically interpretable. Given that this
+                                model accurately captures interaction between solute and solvent molecules, it is possible to
+                                extend this approach to chemical and biological problems that involve interactions between two
+                                molecular systems. For example, the interaction map used here may be extended to quantify 
+                                rug-receptor interactions, which can be used for computer enabled identification of new chemical
+                                entities that bind to disease relevant protein targets, a key exercise in pharmaceutical industry.
+                                Such a model can also be used in lead optimization in drug design, where the molecule is modified
+                                to maximize certain contributions in the interaction map to enhance the binding of a drug to a
+                                biological receptor.
+                                </p>
+
+                                <p><h5><b>Codes</b></h5>
+                                    All Codes are available <a href="https://github.com/devalab/CIGIN">here</a>
+                                </p>
+
+                                <p><h5><b>System</b></h5>
+                                    <b>Instructions :</b> Please type the name of the Solute and Solvent molecule to predict the
+                                     Pharmacokinetic Properties of the Drug-Like Molecules.
+                                </p>
+
+                                <div id="jsme_container"></div>
+                                <form>
+                                <input type="checkbox" onChange='jsmeApplet.options(this.checked ? "canonize" : "nocanonize");show_smiles({src: jsmeApplet})' >Canonical SMILES
+                                </form>
+
+                                <BR>
+                                SMILES: <b><span id="smiles_container"></span></b>
+
+
+
+                                <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center" >							
+                                    <form action="/result" >
+                                        {% csrf_token %}
+                                        <input type="text" placeholder="Enter the Solute Molecule here" name="solute"><br> <br>
+                                        <input type="text" placeholder="Enter the Solvent Molecule here" name="solvent"><br> <br>
+                                        <center><input type="submit" value="Predict"></center> <br>
+                                        <input type="text" placeholder="Predicted Score will be displayed here" value={{result}}><br>
+                                     
+
+                                    </form>
+                                </div>
+
+                        </td>
+                    </tr>
+                   
+        
+                </table>
+            </div>
+        </div>
+        <br>
+    
+    </body>
+    {% endblock %}

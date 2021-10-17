@@ -1,0 +1,67 @@
+{% extends 'lab/navbar.html' %}
+{% load static %}
+
+{% block content%}
+
+<head>
+    <style>
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="{% static 'lab/images/publicataion_images/publications_img.jpg' %}" alt="Group Photo" width="100%">
+    <br><br>
+    <h1>
+        <center>THESIS</center>
+    </h1>
+    <br>
+    <div>
+        <div>
+            <table class="table-responsive">
+
+                
+            </table>
+        </div>
+    </div>
+    <br><br><br>
+    <h1>
+        <center>PUBLICATIONS</center>
+    </h1>
+    <br>
+    <div>
+        <div>
+            <table class="table-responsive">
+
+                {% for public in datas %}
+                <tr>
+                    <td>
+                        <h5>{{public.year}}</h5>
+                        <p style="color: black;"><b>{{public.title}}</b></p>
+                        <p style="font-size: 14px;"><i>{{public.publication}}</i></p>
+                        <p style="font-size: 14px;"><i>{{public.authors}}</i></p>
+                    </td>
+                    <td><a href="{{public.link}}"
+                            target="blank" style="color: dodgerblue;"><i class="ai ai-google-scholar-square ai-2x"
+                                style="padding-right: 10px;"></i></a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <hr>
+                    </td>
+                </tr>
+                {% endfor %}
+                
+               
+
+            </table>
+        </div>
+    </div>
+    <br>
+
+    {% endblock %}

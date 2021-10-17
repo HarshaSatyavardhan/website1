@@ -1,0 +1,126 @@
+{% extends 'lab/navbar.html' %}
+{% load static %}
+
+{% block content%}
+    <style>
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #000000;
+            color: white;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        }
+    </style>
+
+
+    <body>
+
+        <img src="{% static 'lab\images\team\grp (1).jpeg' %}" alt="Group Photo" width="110%">
+        <section>
+            <section class="team-page-section">
+                <div class="container">
+                    <div class="row clearfix">
+                    </div>
+                    <center>
+                        <h1><b>SENIOR SCIENTISTS</b></h1>
+                    </center>
+                    <hr style="margin-left: 20px; margin-right: 20px;">
+                    <br>
+                    <div class="row clearfix">
+
+
+                        <div class="team-block col-lg-4 col-md-6 col-sm-12">
+                            <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <ul class="social-icons">
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://scholar.google.com/citations?user=-Y3B6jwAAAAJ&hl=en&oi=sra" target="_blank"><i class="ai ai-google-scholar-square"></i></a></li>
+                                    <li><a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=Namgung%20B%5BAuthor%5D&cauthor=true&cauthor_uid=31324797"
+                                            target="_blank"><i class="ai ai-pubmed"></i></a></li>
+                                </ul>
+                                <div class="image">
+                                    <img src="{% static 'lab/images/team/PostDocs/shampa.jpg' %}" alt="" />
+                                </div>
+                                <div class="lower-content">
+                                    <h3>Shampa<br>Raghunathan, PhD</h3>
+                                    <div class="designation">Senior<br>Scientist</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="row clearfix">
+
+                    </div>
+                    <br>
+                    <br>
+
+
+                </div>
+                </div>
+                </div>
+
+                <div class="container">
+                    <div class="row clearfix">
+                    </div>
+                    <center>
+                        <h1><b>VISITING SCHOLARS</b></h1>
+                    </center>
+                    <hr style="margin-left: 20px; margin-right: 20px;">
+                    <br>
+                    <div class="row clearfix">
+
+
+                        <!-- <div class="team-block col-lg-4 col-md-6 col-sm-12">
+                            <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <ul class="social-icons">
+                                    <li><a href="https://www.linkedin.com/in/ailiang-chen-93601555/" target="_blank"><i
+                                                class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=Chen%20A%5BAuthor%5D&cauthor=true&cauthor_uid=32101426"
+                                            target="_blank"><i class="ai ai-pubmed"></i></a></li>
+                                </ul>
+                                <div class="image">
+                                    <img src="images/team/PhD/Ailiang.jpg" alt="" />
+                                </div>
+                                <div class="lower-content">
+                                    <h3>Dr. Ailiang<br>Chen</h3>
+                                    <div class="designation">Visiting<br>Scholar</div>
+                                </div>
+                            </div>
+                        </div> -->
+
+
+            </section>
+
+        </section>
+
+    </body>
+{% endblock %}
