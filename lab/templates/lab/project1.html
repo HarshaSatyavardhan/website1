@@ -14,6 +14,9 @@
         <script>
             //this function will be called after the JavaScriptApplet code has been loaded.
             function jsmeOnLoad() {
+
+                document.getElementById("jsme_container").style.display = "none"
+            
     
                 jsmeApplet = new JSApplet.JSME("jsme_container", "380px", "340px", {
                     "options": "oldlook,marker,markAtomOnly,nocanonize"
@@ -21,6 +24,13 @@
     
                 jsmeApplet.setCallBack("AfterStructureModified", show_smiles);
                 //jsmeApplet.setNotifyStructuralChangeJSfunction("show_smiles");
+
+                document.getElementById('jsme_container2').style.display = 'none';
+                jsmeApplet2 = new JSApplet.JSME("jsme_container2", "380px", "340px", {
+                    "options": "oldlook,marker,markAtomOnly,nocanonize"
+                });
+
+                jsmeApplet2.setCallBack("AfterStructureModified", show_smiles2);
             }
     
             var patt = /\[([A-Za-z][a-z]?)H?\d*:\d+\]/g; //regexp pattern for numbered atom
@@ -28,6 +38,15 @@
                 smiles = event.src.smiles(); //atom that are colored are numbered
                 new_smiles = smiles.replace(patt, '<em>$1</em>');
                 document.getElementById("smiles_container").innerHTML = new_smiles
+            
+            }
+
+            var patt = /\[([A-Za-z][a-z]?)H?\d*:\d+\]/g; //regexp pattern for numbered atom
+            function show_smiles2(event) {
+                smiles = event.src.smiles(); //atom that are colored are numbered
+                new_smiles = smiles.replace(patt, '<em>$1</em>');
+                document.getElementById("smiles_container2").innerHTML = new_smiles
+            
             }
     
     
@@ -171,6 +190,13 @@
                                      Pharmacokinetic Properties of the Drug-Like Molecules.
                                 </p>
 
+                    <!-- Solute jsme editor -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <b>Solute</b>
+                                        <BR>
+                                <button name="button" onClick="document.getElementById('jsme_container').style.display='inline'">Show</button>
+                                <button name= "button" onClick='document.getElementById("jsme_container").style.display="none"'>Hide</button>
                                 <div id="jsme_container"></div>
                                 <form>
                                 <input type="checkbox" onChange='jsmeApplet.options(this.checked ? "canonize" : "nocanonize");show_smiles({src: jsmeApplet})' >Canonical SMILES
@@ -178,13 +204,27 @@
 
                                 <BR>
                                 SMILES: <b><span id="smiles_container"></span></b>
+                            </div> 
+                    <!-- Solvent jsme editor -->
+                            <div class="col-md-6">
+                                <b>Solvent</b>
+                                <BR>
+                                <button name="button" onClick="document.getElementById('jsme_container2').style.display='inline'">Show</button>
+                                <button name= "button" onClick='document.getElementById("jsme_container2").style.display="none"'>Hide</button>
+                                <div id="jsme_container2"></div>
 
-
-
+                                <form>
+                                    <input type="checkbox" onChange='jsmeApplet.options(this.checked ? "canonize" : "nocanonize");show_smiles2({src: jsmeApplet})' >Canonical SMILES
+                                    </form>
+    
+                                    <BR>
+                                    SMILES: <b><span id="smiles_container2"></span></b>
+                                </div>
+                            </div>
                                 <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center" >							
                                     <form action="/result" >
                                         {% csrf_token %}
-                                        <input type="text" placeholder="Enter the Solute Molecule here" name="solute"><br> <br>
+                                        <input type="text" placeholder="Enter the Solute Molecule here" name="solute"}><br> <br>
                                         <input type="text" placeholder="Enter the Solvent Molecule here" name="solvent"><br> <br>
                                         <center><input type="submit" value="Predict"></center> <br>
                                         <input type="text" placeholder="Predicted Score will be displayed here" value={{result}}><br>
