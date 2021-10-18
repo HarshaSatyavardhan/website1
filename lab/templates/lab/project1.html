@@ -38,6 +38,7 @@
                 smiles = event.src.smiles(); //atom that are colored are numbered
                 new_smiles = smiles.replace(patt, '<em>$1</em>');
                 document.getElementById("smiles_container").innerHTML = new_smiles
+                document.getElementById("smiles").value = new_smiles
             
             }
 
@@ -46,7 +47,7 @@
                 smiles = event.src.smiles(); //atom that are colored are numbered
                 new_smiles = smiles.replace(patt, '<em>$1</em>');
                 document.getElementById("smiles_container2").innerHTML = new_smiles
-            
+                document.getElementById("smiles2").value = new_smiles
             }
     
     
@@ -224,8 +225,8 @@
                                 <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center" >							
                                     <form action="/result" >
                                         {% csrf_token %}
-                                        <input type="text" placeholder="Enter the Solute Molecule here" name="solute"}><br> <br>
-                                        <input type="text" placeholder="Enter the Solvent Molecule here" name="solvent"><br> <br>
+                                        <input type="text" placeholder="Enter the Solute Molecule here" name="solute" id="smiles"><br> <br>
+                                        <input type="text" placeholder="Enter the Solvent Molecule here" name="solvent" id="smiles2"><br> <br>
                                         <center><input type="submit" value="Predict"></center> <br>
                                         <input type="text" placeholder="Predicted Score will be displayed here" value={{result}}><br>
                                      

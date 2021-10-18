@@ -20,3 +20,6 @@ class alumini(models.Model):
     currently = models.CharField(max_length=500, null=True)
 
 
+
+
+
